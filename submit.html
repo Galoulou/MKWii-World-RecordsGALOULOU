@@ -1,1 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Soumettre un record — MKWii World Records</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            🏁 MKWii World Records
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="circuits.html">Circuits</a>
+            <a href="submit.html">Soumettre un record</a>
+            <a href="login.html">Connexion</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE -->
+    <main class="submit-page">
+
+        <section class="submit-hero">
+
+            <p class="subtitle">RECORD SUBMISSION</p>
+
+            <h1>
+                SOUMETS TON<br>
+                <span>RECORD</span>
+            </h1>
+
+            <p>
+                Entre ton meilleur temps et ajoute une preuve
+                pour envoyer ta performance à la communauté.
+            </p>
+
+        </section>
+
+
+        <!-- FORMULAIRE -->
+        <section class="submit-container">
+
+            <form id="recordForm">
+
+
+                <!-- JOUEUR -->
+                <div class="form-section">
+
+                    <div class="form-title">
+                        <span>01</span>
+
+                        <div>
+                            <h2>Joueur</h2>
+                            <p>Informations sur le joueur</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="playerName">
+                            Pseudo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="playerName"
+                            name="playerName"
+                            placeholder="Ton pseudo"
+                            maxlength="30"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CIRCUIT -->
+                <div class="form-section">
+
+                    <div class="form-title">
+                        <span>02</span>
+
+                        <div>
+                            <h2>Circuit</h2>
+                            <p>Choisis le circuit de ton record</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="track">
+                            Circuit
+                        </label>
+
+                        <select id="track" name="track" required>
+
+                            <option value="">
+                                Sélectionner un circuit
+                            </option>
+
+                            <optgroup label="Coupe Champignon">
+                                <option>Circuit Luigi</option>
+                                <option>Prairie Meuh Meuh</option>
+                                <option>Gorge Champignon</option>
+                                <option>Usine Toad</option>
+                            </optgroup>
+
+                            <optgroup label="Coupe Fleur">
+                                <option>Circuit Mario</option>
+                                <option>Supermarché Coco</option>
+                                <option>Sommet DK</option>
+                                <option>Mine Wario</option>
+                            </optgroup>
+
+                            <optgroup label="Coupe Étoile">
+                                <option>Circuit Daisy</option>
+                                <option>Cap Koopa</option>
+                                <option>Route Arc-en-ciel</option>
+                                <option>Château de Bowser</option>
+                            </optgroup>
+
+                            <optgroup label="Coupe Spéciale">
+                                <option>Route Arc-en-ciel</option>
+                                <option>Plage Peach</option>
+                            </optgroup>
+
+                            <optgroup label="Circuits rétro">
+                                <option>Circuit Mario SNES</option>
+                                <option>Circuit Yoshi N64</option>
+                                <option>Montagne DK GCN</option>
+                                <option>Stade Waluigi</option>
+                                <option>Circuit Daisy</option>
+                                <option>Route Clair de Lune</option>
+                                <option>Jungle DK</option>
+                            </optgroup>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CATEGORIE -->
+                <div class="form-section">
+
+                    <div class="form-title">
+                        <span>03</span>
+
+                        <div>
+                            <h2>Catégorie</h2>
+                            <p>Définis les règles de ton record</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="cc">
+                                Cylindrée
+                            </label>
+
+                            <select id="cc" name="cc" required>
+
+                                <option value="">
+                                    Sélectionner
+                                </option>
+
+                                <option value="150cc">
+                                    150cc
+                                </option>
+
+                                <option value="200cc">
+                                    200cc
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Catégorie
+                            </label>
+
+                            <select
+                                id="category"
+                                name="category"
+                                required
+                            >
+
+                                <option value="">
+                                    Sélectionner
+                                </option>
+
+                                <option value="glitch">
+                                    Glitch
+                                </option>
+
+                                <option value="no-glitch">
+                                    No Glitch
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TEMPS -->
+                <div class="form-section">
+
+                    <div class="form-title">
+                        <span>04</span>
+
+                        <div>
+                            <h2>Temps</h2>
+                            <p>Entre ton meilleur chrono</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="time">
+                            Temps
+                        </label>
+
+                        <input
+                            type="text"
+                            id="time"
+                            name="time"
+                            placeholder="1:42.381"
+                            pattern="[0-9]+:[0-5][0-9]\.[0-9]{3}"
+                            required
+                        >
+
+                        <small>
+                            Format : minutes:secondes.millisecondes
+                            — exemple : 1:42.381
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PREUVE -->
+                <div class="form-section">
+
+                    <div class="form-title">
+                        <span>05</span>
+
+                        <div>
+                            <h2>Preuve</h2>
+                            <p>Montre la vidéo de ton record</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="proof">
+                            Lien de la vidéo
+                        </label>
+
+                        <input
+                            type="url"
+                            id="proof"
+                            name="proof"
+                            placeholder="https://youtube.com/..."
+                            required
+                        >
+
+                        <small>
+                            YouTube, Twitch ou autre plateforme vidéo.
+                        </small>
+
+                    </div>
+
+
+                    <div class="proof-box">
+
+                        <div class="proof-icon">
+                            🎥
+                        </div>
+
+                        <div>
+                            <strong>
+                                Une preuve est obligatoire
+                            </strong>
+
+                            <p>
+                                Les records sans preuve pourront être
+                                refusés par les modérateurs.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMATIONS -->
+                <div class="form-section">
+
+                    <div class="form-title">
+                        <span>06</span>
+
+                        <div>
+                            <h2>Informations</h2>
+                            <p>Informations supplémentaires</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="notes">
+                            Notes
+                            <span class="optional">
+                                Optionnel
+                            </span>
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="5"
+                            maxlength="500"
+                            placeholder="Technique utilisée, version du jeu, contrôleur, etc."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ENVOI -->
+                <div class="submit-bottom">
+
+                    <div class="submit-warning">
+
+                        <strong>
+                            🔍 Vérification
+                        </strong>
+
+                        <p>
+                            Ton record sera vérifié avant d'apparaître
+                            dans le classement.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn primary submit-button"
+                    >
+                        📤 Envoyer le record
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            🏁 MKWii World Records
+        </div>
+
+        <p>
+            Une communauté dédiée aux records de Mario Kart Wii.
+        </p>
+
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="circuits.html">Circuits</a>
+            <a href="submit.html">Soumettre</a>
+            <a href="login.html">Connexion</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 MKWii World Records
+        </p>
+
+    </footer>
+
+
+    <!-- VERSION TEMPORAIRE -->
+    <script>
+
+        const form = document.getElementById("recordForm");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert(
+                "✅ Formulaire prêt !\n\n" +
+                "La connexion à la base de données sera ajoutée ensuite."
+            );
+
+        });
+
+    </script>
+
+</body>
+</html>
