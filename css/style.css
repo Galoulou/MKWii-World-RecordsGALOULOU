@@ -1,1 +1,565 @@
+/* ================================
+   MKWII WORLD RECORDS
+   STYLE PRINCIPAL
+================================ */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080b12;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(5, 8, 15, 0.85);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.header nav {
+    display: flex;
+    gap: 28px;
+}
+
+.header nav a {
+    color: #dce3f0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.header nav a:hover {
+    color: #5ab0ff;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 80px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 8, 15, 0.96) 0%,
+            rgba(5, 8, 15, 0.80) 45%,
+            rgba(5, 8, 15, 0.45) 100%
+        ),
+        url("../images/circuits/mushroom-gorge.webp");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(90,176,255,0.18),
+            transparent 35%
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.subtitle {
+    color: #5ab0ff;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 115px);
+
+    line-height: 0.85;
+
+    font-weight: 1000;
+
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: #5ab0ff;
+}
+
+.description {
+    margin-top: 30px;
+
+    max-width: 560px;
+
+    color: #b8c1d1;
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 24px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    transition: 0.25s;
+
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn.primary {
+    background: #5ab0ff;
+    color: #06101c;
+
+    box-shadow: 0 10px 35px rgba(90,176,255,0.22);
+}
+
+.btn.primary:hover {
+    background: #79beff;
+}
+
+.btn.secondary {
+    background: rgba(255,255,255,0.06);
+    color: white;
+
+    border-color: rgba(255,255,255,0.12);
+}
+
+.btn.secondary:hover {
+    background: rgba(255,255,255,0.11);
+}
+
+
+/* ================================
+   STATS
+================================ */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    max-width: 1100px;
+
+    margin: -45px auto 0;
+
+    padding: 0 25px;
+
+    position: relative;
+    z-index: 5;
+}
+
+.stat-card {
+    background: rgba(17, 23, 35, 0.95);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+}
+
+.stat-card strong {
+    display: block;
+
+    font-size: 34px;
+
+    color: #5ab0ff;
+
+    margin-bottom: 7px;
+}
+
+.stat-card span {
+    color: #aab4c5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+.categories,
+.featured {
+    max-width: 1150px;
+
+    margin: 100px auto 0;
+
+    padding: 0 25px;
+}
+
+.categories h2,
+.featured h2 {
+    font-size: 36px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================================
+   CATEGORY CARDS
+================================ */
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.category-card {
+    text-decoration: none;
+
+    color: white;
+
+    background: #101622;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(90,176,255,0.5);
+
+    background: #131c2c;
+}
+
+.category-icon {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.category-card h3 {
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #8f9aac;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   SECTION TITLE
+================================ */
+
+.section-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    margin-bottom: 0;
+}
+
+.view-all {
+    color: #5ab0ff;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    font-size: 14px;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   RECORDS
+================================ */
+
+.records-table {
+    background: #101622;
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.record-empty {
+    padding: 70px 25px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 50px;
+
+    margin-bottom: 20px;
+}
+
+.record-empty h3 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.record-empty p {
+    color: #8994a6;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    margin-top: 120px;
+
+    padding: 55px 25px 35px;
+
+    text-align: center;
+
+    background: #05070c;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: 900;
+
+    margin-bottom: 12px;
+}
+
+footer > p {
+    color: #788397;
+
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #aeb8c8;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    color: #5ab0ff;
+}
+
+.copyright {
+    margin-top: 20px;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+
+    .header {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .header nav {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 680px;
+
+        padding: 150px 7% 80px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+
+        margin-top: 25px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories,
+    .featured {
+        margin-top: 75px;
+    }
+
+    .section-title {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -3px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
