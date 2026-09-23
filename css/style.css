@@ -843,3 +843,321 @@ footer > p {
     }
 
 }
+/* ================================
+   PAGE CONNEXION / INSCRIPTION
+================================ */
+
+.auth-page {
+    min-height: 100vh;
+
+    padding: 135px 20px 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(90,176,255,0.10),
+            transparent 35%
+        );
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 480px;
+
+    padding: 42px;
+
+    background: rgba(16,22,34,0.96);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.35);
+
+    text-align: center;
+}
+
+.auth-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: rgba(90,176,255,0.10);
+
+    border: 1px solid rgba(90,176,255,0.25);
+
+    font-size: 34px;
+}
+
+.auth-container .subtitle {
+    margin-bottom: 12px;
+}
+
+.auth-container h1 {
+    font-size: 36px;
+
+    margin-bottom: 12px;
+}
+
+.auth-description {
+    color: #8995a7;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 32px;
+}
+
+
+/* ================================
+   FORMULAIRE
+================================ */
+
+.auth-container form {
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    font-size: 13px;
+
+    font-weight: 800;
+
+    color: #dce3ee;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    background: #0b1019;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: 0.25s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #5e697b;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: rgba(90,176,255,0.7);
+
+    box-shadow:
+        0 0 0 3px rgba(90,176,255,0.08);
+}
+
+
+/* ================================
+   BOUTON
+================================ */
+
+.auth-button {
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+
+    font-family: inherit;
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.auth-message {
+    margin-top: 20px;
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.auth-message.success {
+    background: rgba(60,200,120,0.10);
+
+    border: 1px solid rgba(60,200,120,0.25);
+
+    color: #82e0aa;
+}
+
+.auth-message.error {
+    background: rgba(255,80,80,0.10);
+
+    border: 1px solid rgba(255,80,80,0.25);
+
+    color: #ff9b9b;
+}
+
+.auth-message.info {
+    background: rgba(90,176,255,0.10);
+
+    border: 1px solid rgba(90,176,255,0.25);
+
+    color: #8ecaff;
+}
+
+
+/* ================================
+   CHANGEMENT CONNEXION / INSCRIPTION
+================================ */
+
+.auth-switch {
+    margin-top: 28px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+
+    font-size: 13px;
+
+    color: #8995a7;
+}
+
+.auth-switch button {
+    display: block;
+
+    margin: 10px auto 0;
+
+    padding: 0;
+
+    background: none;
+
+    border: none;
+
+    color: #5ab0ff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.auth-switch button:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   INFO
+================================ */
+
+.auth-info {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-top: 28px;
+
+    padding: 15px;
+
+    text-align: left;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    border-radius: 11px;
+}
+
+.auth-info > div {
+    font-size: 18px;
+}
+
+.auth-info p {
+    margin: 0;
+
+    color: #778396;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   OPTIONNEL
+================================ */
+
+.optional {
+    color: #667285;
+
+    font-size: 11px;
+
+    font-weight: normal;
+
+    margin-left: 5px;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 550px) {
+
+    .auth-page {
+        padding: 115px 15px 60px;
+    }
+
+    .auth-container {
+        padding: 30px 22px;
+    }
+
+    .auth-container h1 {
+        font-size: 30px;
+    }
+
+}
