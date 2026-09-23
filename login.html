@@ -1,1 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connexion — MKWii World Records</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            🏁 MKWii World Records
+        </div>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="circuits.html">Circuits</a>
+            <a href="submit.html">Soumettre un record</a>
+            <a href="login.html">Connexion</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE -->
+    <main class="auth-page">
+
+        <section class="auth-container">
+
+            <!-- LOGO -->
+            <div class="auth-logo">
+                🏁
+            </div>
+
+            <p class="subtitle">MKWII WORLD RECORDS</p>
+
+            <h1 id="authTitle">
+                Connexion
+            </h1>
+
+            <p class="auth-description" id="authDescription">
+                Connecte-toi pour gérer ton profil et tes records.
+            </p>
+
+
+            <!-- FORMULAIRE -->
+            <form id="authForm">
+
+
+                <!-- PSEUDO -->
+                <div
+                    class="form-group register-only"
+                    id="usernameGroup"
+                    style="display: none;"
+                >
+
+                    <label for="username">
+                        Pseudo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Ton pseudo"
+                        maxlength="30"
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Adresse e-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="ton@email.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MOT DE PASSE -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Mot de passe
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Ton mot de passe"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONFIRMATION -->
+                <div
+                    class="form-group register-only"
+                    id="confirmPasswordGroup"
+                    style="display: none;"
+                >
+
+                    <label for="confirmPassword">
+                        Confirmer le mot de passe
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Retape ton mot de passe"
+                        minlength="6"
+                    >
+
+                </div>
+
+
+                <!-- BOUTON -->
+                <button
+                    type="submit"
+                    class="btn primary auth-button"
+                    id="authButton"
+                >
+                    Se connecter
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE -->
+            <div
+                class="auth-message"
+                id="authMessage"
+                style="display: none;"
+            ></div>
+
+
+            <!-- CHANGEMENT DE MODE -->
+            <div class="auth-switch">
+
+                <span id="switchText">
+                    Pas encore de compte ?
+                </span>
+
+                <button
+                    type="button"
+                    id="switchMode"
+                >
+                    Créer un compte
+                </button>
+
+            </div>
+
+
+            <!-- INFO -->
+            <div class="auth-info">
+
+                <div>🔐</div>
+
+                <p>
+                    Ton compte permettra de soumettre des records,
+                    gérer ton profil et suivre tes performances.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            🏁 MKWii World Records
+        </div>
+
+        <p>
+            Une communauté dédiée aux records de Mario Kart Wii.
+        </p>
+
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="circuits.html">Circuits</a>
+            <a href="submit.html">Soumettre</a>
+            <a href="login.html">Connexion</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 MKWii World Records
+        </p>
+
+    </footer>
+
+
+    <!-- SCRIPT -->
+    <script>
+
+        let registerMode = false;
+
+
+        const authTitle =
+            document.getElementById("authTitle");
+
+        const authDescription =
+            document.getElementById("authDescription");
+
+        const authButton =
+            document.getElementById("authButton");
+
+        const switchText =
+            document.getElementById("switchText");
+
+        const switchMode =
+            document.getElementById("switchMode");
+
+        const usernameGroup =
+            document.getElementById("usernameGroup");
+
+        const confirmPasswordGroup =
+            document.getElementById("confirmPasswordGroup");
+
+        const username =
+            document.getElementById("username");
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+        const authForm =
+            document.getElementById("authForm");
+
+        const authMessage =
+            document.getElementById("authMessage");
+
+
+        /* ================================
+           CHANGER DE MODE
+        ================================= */
+
+        switchMode.addEventListener("click", function () {
+
+            registerMode = !registerMode;
+
+            authMessage.style.display = "none";
+
+
+            if (registerMode) {
+
+                authTitle.textContent =
+                    "Créer un compte";
+
+                authDescription.textContent =
+                    "Crée ton compte pour rejoindre la communauté.";
+
+                authButton.textContent =
+                    "Créer mon compte";
+
+                switchText.textContent =
+                    "Tu as déjà un compte ?";
+
+                switchMode.textContent =
+                    "Se connecter";
+
+                usernameGroup.style.display =
+                    "flex";
+
+                confirmPasswordGroup.style.display =
+                    "flex";
+
+                username.required = true;
+
+                confirmPassword.required = true;
+
+            } else {
+
+                authTitle.textContent =
+                    "Connexion";
+
+                authDescription.textContent =
+                    "Connecte-toi pour gérer ton profil et tes records.";
+
+                authButton.textContent =
+                    "Se connecter";
+
+                switchText.textContent =
+                    "Pas encore de compte ?";
+
+                switchMode.textContent =
+                    "Créer un compte";
+
+                usernameGroup.style.display =
+                    "none";
+
+                confirmPasswordGroup.style.display =
+                    "none";
+
+                username.required = false;
+
+                confirmPassword.required = false;
+
+            }
+
+        });
+
+
+        /* ================================
+           FORMULAIRE
+        ================================= */
+
+        authForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            if (registerMode) {
+
+                if (
+                    confirmPassword.value !==
+                    document.getElementById("password").value
+                ) {
+
+                    showMessage(
+                        "❌ Les deux mots de passe ne correspondent pas.",
+                        "error"
+                    );
+
+                    return;
+                }
+
+
+                showMessage(
+                    "✅ Interface prête ! La création de compte sera connectée à la base de données ensuite.",
+                    "success"
+                );
+
+            } else {
+
+                showMessage(
+                    "ℹ️ Interface prête ! La connexion sera connectée à la base de données ensuite.",
+                    "info"
+                );
+
+            }
+
+        });
+
+
+        /* ================================
+           MESSAGE
+        ================================= */
+
+        function showMessage(message, type) {
+
+            authMessage.textContent = message;
+
+            authMessage.className =
+                "auth-message " + type;
+
+            authMessage.style.display =
+                "block";
+
+        }
+
+    </script>
+
+</body>
+</html>
