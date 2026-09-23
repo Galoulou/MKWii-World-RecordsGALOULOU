@@ -563,3 +563,283 @@ footer > p {
         width: 100%;
     }
 }
+/* ================================
+   PAGE CIRCUITS
+================================ */
+
+.circuits-page {
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+.circuits-hero {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 60px 25px 35px;
+}
+
+.circuits-hero h1 {
+    font-size: clamp(48px, 7vw, 85px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
+
+.circuits-hero > p:last-child {
+    color: #9da8b9;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+
+/* ================================
+   RECHERCHE
+================================ */
+
+.circuit-search {
+    max-width: 1150px;
+    margin: 10px auto 60px;
+    padding: 0 25px;
+}
+
+.circuit-search input {
+    width: 100%;
+    padding: 18px 20px;
+
+    background: #101622;
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.25s;
+}
+
+.circuit-search input::placeholder {
+    color: #687386;
+}
+
+.circuit-search input:focus {
+    border-color: rgba(90,176,255,0.7);
+
+    box-shadow:
+        0 0 0 3px rgba(90,176,255,0.08);
+}
+
+
+/* ================================
+   LISTE DES CIRCUITS
+================================ */
+
+.circuit-list {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 25px 100px;
+}
+
+.cup-title {
+    margin: 65px 0 22px;
+
+    font-size: 23px;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cup-title:first-child {
+    margin-top: 0;
+}
+
+
+/* ================================
+   GRILLE
+================================ */
+
+.circuit-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* ================================
+   CARTE CIRCUIT
+================================ */
+
+.circuit-card {
+    position: relative;
+
+    min-height: 145px;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    padding: 20px;
+
+    text-decoration: none;
+    color: white;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(12,17,27,0.15),
+            rgba(5,8,14,0.96)
+        ),
+        linear-gradient(
+            135deg,
+            #182233,
+            #0d131e
+        );
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.circuit-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(90,176,255,0.55);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35),
+        0 0 25px rgba(90,176,255,0.08);
+}
+
+
+/* Numéro */
+
+.circuit-number {
+    position: absolute;
+
+    top: 14px;
+    right: 16px;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    color: rgba(255,255,255,0.35);
+}
+
+
+/* Informations */
+
+.circuit-info {
+    position: relative;
+    z-index: 2;
+}
+
+.circuit-info span {
+    display: block;
+
+    color: #5ab0ff;
+
+    font-size: 10px;
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.circuit-info h3 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.circuit-info p {
+    color: #8995a7;
+
+    font-size: 12px;
+}
+
+
+/* ================================
+   EFFET LUMIÈRE
+================================ */
+
+.circuit-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    top: -65px;
+    left: -40px;
+
+    background: rgba(90,176,255,0.15);
+
+    filter: blur(35px);
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+.circuit-card:hover::before {
+    background: rgba(90,176,255,0.28);
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1000px) {
+
+    .circuit-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .circuit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .circuits-hero {
+        padding-top: 40px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .circuit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .circuits-hero h1 {
+        font-size: 48px;
+    }
+
+    .circuit-card {
+        min-height: 130px;
+    }
+
+}
