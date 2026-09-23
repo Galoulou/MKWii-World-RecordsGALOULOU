@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Mon profil — MKWII World Records</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🏆 MKWII WORLD RECORDS
+    </div>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="circuits.html">Circuits</a>
+        <a href="submit.html">Soumettre un record</a>
+        <a href="login.html">Connexion</a>
+    </nav>
+</header>
+
+
+<main class="profile-page">
+
+    <section class="profile-header">
+
+        <div class="profile-avatar">
+            G
+        </div>
+
+        <div class="profile-info">
+            <p class="profile-label">MON PROFIL</p>
+
+            <h1>Galoulou</h1>
+
+            <p class="profile-date">
+                Membre depuis 2026
+            </p>
+        </div>
+
+        <button class="logout-button" onclick="logout()">
+            Se déconnecter
+        </button>
+
+    </section>
+
+
+    <section class="profile-stats">
+
+        <div class="profile-stat">
+            <span>🏆</span>
+            <strong>0</strong>
+            <p>Records validés</p>
+        </div>
+
+        <div class="profile-stat">
+            <span>⏳</span>
+            <strong>0</strong>
+            <p>En attente</p>
+        </div>
+
+        <div class="profile-stat">
+            <span>🌍</span>
+            <strong>0</strong>
+            <p>Classements</p>
+        </div>
+
+    </section>
+
+
+    <section class="profile-section">
+
+        <div class="section-title">
+            <h2>🏆 Mes records</h2>
+            <span>Records validés</span>
+        </div>
+
+        <div class="empty-profile">
+
+            <div class="empty-icon">
+                🏁
+            </div>
+
+            <h3>Aucun record pour le moment</h3>
+
+            <p>
+                Soumets ton premier temps et essaie d'apparaître
+                dans les classements !
+            </p>
+
+            <a href="submit.html" class="profile-button">
+                Soumettre un record
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section class="profile-section">
+
+        <div class="section-title">
+            <h2>⏳ Soumissions en attente</h2>
+            <span>Validation</span>
+        </div>
+
+        <div class="empty-profile">
+
+            <div class="empty-icon">
+                📋
+            </div>
+
+            <h3>Aucune soumission</h3>
+
+            <p>
+                Tes records envoyés pour validation apparaîtront ici.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="profile-section">
+
+        <div class="section-title">
+            <h2>❌ Records refusés</h2>
+            <span>Historique</span>
+        </div>
+
+        <div class="empty-profile">
+
+            <div class="empty-icon">
+                📭
+            </div>
+
+            <h3>Aucun record refusé</h3>
+
+            <p>
+                Tu n'as encore aucune soumission refusée.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 MKWII World Records</p>
+    <p>Projet communautaire Mario Kart Wii</p>
+</footer>
+
+
+<script>
+
+function logout() {
+
+    const confirmation = confirm(
+        "Voulez-vous vraiment vous déconnecter ?"
+    );
+
+    if (confirmation) {
+
+        // La vraie déconnexion sera ajoutée avec Supabase.
+        window.location.href = "login.html";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
