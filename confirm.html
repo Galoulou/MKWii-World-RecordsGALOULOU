@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Compte confirmé — MKWII World Records</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🏆 MKWII WORLD RECORDS
+    </div>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="circuits.html">Circuits</a>
+        <a href="submit.html">Soumettre un record</a>
+        <a href="login.html">Connexion</a>
+    </nav>
+</header>
+
+<main class="auth-page">
+
+    <div class="auth-container">
+
+        <div class="auth-logo">✅</div>
+
+        <h1>Compte confirmé !</h1>
+
+        <p id="confirm-message">
+            Vérification de ton compte...
+        </p>
+
+        <div id="confirm-actions" style="display:none;">
+            <a href="profile.html" class="auth-button">
+                Aller à mon profil
+            </a>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="js/supabase.js"></script>
+
+<script>
+async function checkConfirmation() {
+
+    const message = document.getElementById("confirm-message");
+    const actions = document.getElementById("confirm-actions");
+
+    try {
+
+        const { data, error } = await supabaseClient.auth.getSession();
+
+        if (error) {
+            console.error(error);
+
+            message.textContent =
+                "Une erreur est survenue pendant la confirmation.";
+
+            return;
+        }
+
+        if (data.session) {
+
+            message.textContent =
+                "Ton adresse e-mail est confirmée. Ton compte MKWII World Records est prêt !";
+
+            actions.style.display = "block";
+
+        } else {
+
+            message.textContent =
+                "Ton e-mail a été confirmé. Tu peux maintenant te connecter.";
+
+            actions.style.display = "block";
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        message.textContent =
+            "Impossible de vérifier la confirmation.";
+
+    }
+}
+
+checkConfirmation();
+</script>
+
+</body>
+</html>
